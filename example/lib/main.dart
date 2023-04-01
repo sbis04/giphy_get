@@ -6,16 +6,8 @@ import 'package:giphy_get/giphy_get.dart';
 import 'package:giphy_get/l10n.dart';
 import 'package:giphy_get_demo/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  if (!kIsWeb) {
-    await dotenv.load(mergeWith: Platform.environment);
-  } else {
-    await dotenv.load();
-  }
-
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
         create: (ctx) => ThemeProvider(currentTheme: ThemeMode.system))
@@ -77,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // Random ID
   String randomId = "";
 
-  String giphyApiKey = dotenv.env["GIPHY_API_KEY"];
+  String giphyApiKey = 'YOUR_API_KEY';
 
   @override
   void initState() {

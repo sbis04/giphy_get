@@ -35,7 +35,7 @@ class GiphyGetWrapper extends StatelessWidget {
     GiphyGif? gif = await GiphyGet.getGif(
       queryText: queryText,
       context: context,
-      apiKey: giphy_api_key, //YOUR API KEY HERE
+      apiKey: giphy_api_key,
       lang: GiphyLanguage.spanish,
       showGIFs: showGIFs,
       showStickers: showStickers,
